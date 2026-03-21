@@ -1,4 +1,3 @@
-let inp = document.querySelector("#inp").value;
 
 let btn = document.querySelector("button");
 
@@ -30,16 +29,29 @@ async function callApi(inp)
     return await res.json();
 };
 
-async function run() {
-    try{
-       let data = await callApi("Tell me the Five Animal Nmae");
-      console.log(data);
-    }
-    catch(e)
-    {
-       console.log("Error is " + e);
-    }
-}
+btn.addEventListener("click" , async () =>
+{
+    let inp = document.querySelector("#inp").value; // Text In Input..
+    let box = document.querySelector(".chatarea"); // Chat Area
 
-run()
+    try {
+        let data = await callApi(inp);//API CALL
+
+        let msg2 = document.createElement("p");
+        msg2.innerHTML += `You :${inp}`;
+
+        box.appendChild(msg2);
+
+        let msg = document.createElement("p");
+        msg.innerHTML = `<b>Bot Reply : ${data.candidates[0].content.parts[0].text}</b>`;//BOT REPLY
+
+        box.appendChild(msg);
+
+    } catch (error) {
+        console.log("Errrow Of the API" + error);
+    }
+
+    
+
+})
 
