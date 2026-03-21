@@ -36,6 +36,10 @@ btn.addEventListener("click" , async () =>
 
     try {
         let data = await callApi(inp);//API CALL
+        
+        let reply  = data.candidates[0].content.parts[0].text;
+
+        let response = reply.replace(/\*\*/g, "");
 
         let msg2 = document.createElement("p");
         msg2.innerHTML += `You :${inp}`;
@@ -43,15 +47,14 @@ btn.addEventListener("click" , async () =>
         box.appendChild(msg2);
 
         let msg = document.createElement("p");
-        msg.innerHTML = `<b>Bot Reply : ${data.candidates[0].content.parts[0].text}</b>`;//BOT REPLY
+        msg.classList.add("letterspace");
+        msg.innerHTML = `<b>Bot Reply : ${response}</b>`;//BOT REPLY
 
         box.appendChild(msg);
 
     } catch (error) {
         console.log("Errrow Of the API" + error);
     }
-
-    
 
 })
 
