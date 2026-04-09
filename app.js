@@ -1,7 +1,6 @@
 
 let btn = document.querySelector("button");
-
-const API_KEY = "AIzaSyDEqdJvYj27qvwyg3TMIHkTEZ3NEbemNJo";
+const API_KEY = "AIzaSyAhOjH22-V_8Lpu_VVNEq7XuDGq6q4ZCKk";
 
 async function callApi(inp)
 {
