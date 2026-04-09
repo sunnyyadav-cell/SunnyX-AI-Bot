@@ -41,14 +41,15 @@ btn.addEventListener("click" , async () =>
         let response = reply.replace(/\*\*/g, "");
 
         let msg2 = document.createElement("p");
-        msg2.innerHTML += `You :${inp}`;
+        msg2.innerHTML += `You <span><i class="fa-solid fa-arrow-right"></i> <span>${inp}`;
         msg2.classList.add("letterspace");
 
         box.appendChild(msg2);
 
         let msg = document.createElement("p");
         msg.classList.add("letterspace");
-        msg.innerHTML = `<b>Bot Reply : ${response}</b>`;//BOT REPLY
+        msg.innerHTML = `<b>Bot Reply <span><i class="fa-solid fa-arrow-right"></i>
+         ${response}</b>`;//BOT REPLY
 
         box.appendChild(msg);
 
