@@ -49,6 +49,13 @@ h1 i{
     letter-spacing: 1px;
 }
 
+.chatarea .chathead{
+    text-align: center;
+    text-decoration: underline;
+}
+
+
+
 
 .inputbar{
     display: flex;
