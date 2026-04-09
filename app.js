@@ -43,6 +43,7 @@ btn.addEventListener("click" , async () =>
 
         let msg2 = document.createElement("p");
         msg2.innerHTML += `You :${inp}`;
+        msg2.classList.add("letterspace");
 
         box.appendChild(msg2);
 
@@ -53,7 +54,7 @@ btn.addEventListener("click" , async () =>
         box.appendChild(msg);
 
     } catch (error) {
-        console.log("Errrow Of the API" + error);
+        console.log("Errrow" + error);
     }
 
 })
