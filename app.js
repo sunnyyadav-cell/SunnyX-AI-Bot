@@ -52,6 +52,7 @@ btn.addEventListener("click" , async () =>
          ${response}</b>`;//BOT REPLY
 
         box.appendChild(msg);
+        inp.value = "";
 
     } catch (error) {
         console.log("Errrow" + error);
